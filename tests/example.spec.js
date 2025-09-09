@@ -22,17 +22,20 @@ test('get started link', async ({ page }) => {
 
 test('Test 3', async ({ page }) => {
   await page.goto('https://playwright.dev/');
-  console.log("This test will fail");
+
+  // console.log("This test will fail");
+  console.log("This test will not fail");
 
   // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).click();
 
   // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeDisabled();
+  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
 
 
 test.describe("Describe grouping", () => {
+  
   test('Group Test 01', async ({ page }) => {
     await page.goto('https://playwright.dev/');
     console.log("Inside group, test 01");
